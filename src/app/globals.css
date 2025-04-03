@@ -20,6 +20,8 @@
   --gray-100: #F7F9FA;
   --gray-200: #ECF0F1;
   --gray-300: #D6DBDF;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
 }
 
 @layer base {
@@ -30,7 +32,8 @@
   
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-playfair), ui-serif, Georgia, Cambria, serif;
-    @apply font-semibold tracking-tight leading-tight;
+    @apply tracking-tight leading-tight;
+    font-weight: var(--font-weight-bold);
   }
   
   h1 {
@@ -52,19 +55,23 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-[var(--primary)] text-white px-6 py-3 rounded-md hover:bg-[var(--primary-dark)] transition-all duration-300 font-medium shadow-md hover:shadow-lg;
+    @apply bg-[var(--primary)] text-white px-6 py-3 rounded-md hover:bg-[var(--primary-dark)] transition-all duration-300 shadow-md hover:shadow-lg;
+    font-weight: var(--font-weight-medium);
   }
   
   .btn-secondary {
-    @apply bg-[var(--secondary)] text-white px-6 py-3 rounded-md hover:bg-[var(--secondary-dark)] transition-all duration-300 font-medium shadow-md hover:shadow-lg;
+    @apply bg-[var(--secondary)] text-white px-6 py-3 rounded-md hover:bg-[var(--secondary-dark)] transition-all duration-300 shadow-md hover:shadow-lg;
+    font-weight: var(--font-weight-medium);
   }
   
   .btn-accent {
-    @apply bg-[var(--accent)] text-white px-6 py-3 rounded-md hover:bg-[var(--accent-dark)] transition-all duration-300 font-medium shadow-md hover:shadow-lg;
+    @apply bg-[var(--accent)] text-white px-6 py-3 rounded-md hover:bg-[var(--accent-dark)] transition-all duration-300 shadow-md hover:shadow-lg;
+    font-weight: var(--font-weight-medium);
   }
   
   .btn-outline {
-    @apply border-2 border-[var(--primary)] text-[var(--primary)] px-6 py-3 rounded-md hover:bg-[var(--primary)] hover:text-white transition-all duration-300 font-medium;
+    @apply border-2 border-[var(--primary)] text-[var(--primary)] px-6 py-3 rounded-md hover:bg-[var(--primary)] hover:text-white transition-all duration-300;
+    font-weight: var(--font-weight-medium);
   }
   
   .section {

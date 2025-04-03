@@ -12,7 +12,7 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
         <div className="md:w-1/2 mb-16 md:mb-0">
-          <h1 className="font-playfair font-semibold mb-6">
+          <h1 className="font-playfair mb-6">
             <span className="block text-[var(--text-dark)]">행사와 스폰서를 연결해주는,</span>
             <span className="block mt-2 text-gradient text-5xl md:text-6xl lg:text-7xl">스폰서링크</span>
           </h1>
@@ -47,7 +47,7 @@ const HeroSection = () => {
                   <span className="text-3xl text-white">👋</span>
                 </div>
                 <div className="text-center space-y-3">
-                  <h3 className="font-playfair text-xl font-semibold text-[var(--primary)]">스폰서링크</h3>
+                  <h3 className="font-playfair text-xl text-[var(--primary)]">스폰서링크</h3>
                   <p className="text-[var(--text-medium)] text-sm">행사와 스폰서의 완벽한 매칭</p>
                 </div>
                 <div className="mt-8 w-full rounded-xl bg-[var(--gray-100)] p-4">
