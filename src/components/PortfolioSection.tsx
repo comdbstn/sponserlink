@@ -1,9 +1,6 @@
-import Image from 'next/image';
-
-const PortfolioCard = ({ title, description, logoUrl }: {
+const PortfolioCard = ({ title, description }: {
   title: string,
-  description: string,
-  logoUrl: string
+  description: string
 }) => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
@@ -23,20 +20,17 @@ const PortfolioSection = () => {
     {
       id: 1,
       title: "Meitu",
-      description: "인기 소셜미디어 앱",
-      logoUrl: "/logos/meitu.png"
+      description: "인기 소셜미디어 앱"
     },
     {
       id: 2,
       title: "SBS A&T",
-      description: "방송/미디어",
-      logoUrl: "/logos/sbs.png"
+      description: "방송/미디어"
     },
     {
       id: 3,
       title: "명지대학교",
-      description: "대학교",
-      logoUrl: "/logos/mju.png"
+      description: "대학교"
     }
   ];
 
@@ -57,7 +51,6 @@ const PortfolioSection = () => {
               key={portfolio.id}
               title={portfolio.title}
               description={portfolio.description}
-              logoUrl={portfolio.logoUrl}
             />
           ))}
         </div>

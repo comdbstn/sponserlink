@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 const PartnersSection = () => {
   // 파트너사 로고 데이터 (실제 구현 시 이미지 경로를 변경해야 합니다)
   const partners = [

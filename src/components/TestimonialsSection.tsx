@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 const TestimonialCard = ({ quote, author, position, company }: { 
   quote: string, 
   author: string, 
