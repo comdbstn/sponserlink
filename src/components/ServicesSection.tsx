@@ -7,22 +7,25 @@ const ServiceCard = ({ title, description, icon, link }: {
   link: string 
 }) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 mb-8">
-      <div className="flex flex-col items-center text-center">
-        <div className="w-24 h-24 mb-4 relative">
-          {/* 실제 구현 시 Image 컴포넌트에 실제 이미지 경로를 지정해야 합니다 */}
-          <div className="w-full h-full flex items-center justify-center text-4xl text-[#ff5a5a]">
-            {icon}
+    <div className="card group relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)] to-[var(--primary-dark)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+      <div className="relative z-10 p-8 transition-all duration-500 group-hover:translate-y-[-8px]">
+        <div className="flex flex-col items-center text-center">
+          <div className="w-20 h-20 mb-6 relative flex items-center justify-center bg-[var(--gray-100)] group-hover:bg-white rounded-2xl shadow-md transition-colors duration-500">
+            <span className="text-4xl">{icon}</span>
           </div>
+          <h3 className="font-playfair text-xl font-bold mb-4 text-[var(--primary)] group-hover:text-white transition-colors duration-500">{title}</h3>
+          <p className="text-[var(--text-medium)] mb-6 group-hover:text-white/90 transition-colors duration-500">{description}</p>
+          <Link 
+            href={link} 
+            className="text-[var(--primary)] font-medium group-hover:text-white transition-colors duration-500 inline-flex items-center"
+          >
+            자세히 보기
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
         </div>
-        <h3 className="text-xl font-bold mb-2 text-[#ff5a5a]">{title}</h3>
-        <p className="text-gray-600 mb-4">{description}</p>
-        <Link 
-          href={link} 
-          className="text-[#ff5a5a] font-medium hover:underline"
-        >
-          자세히 보기 →
-        </Link>
       </div>
     </div>
   );
@@ -61,17 +64,21 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">주요 서비스</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+    <section id="services" className="section bg-white relative">
+      {/* 장식용 요소 */}
+      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-[var(--gray-100)] rounded-bl-[100px] -z-10"></div>
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-[var(--gray-100)] rounded-tr-[100px] -z-10"></div>
+      
+      <div className="container">
+        <div className="text-center mb-16">
+          <h2 className="font-playfair text-gradient mb-6">주요 서비스</h2>
+          <p className="text-[var(--text-medium)] text-lg max-w-3xl mx-auto">
             스폰서링크는 이벤트 주최자와 스폰서를 연결하는 다양한 서비스를 제공합니다.
             행사 성격과 목적에 맞는 최적의 파트너를 찾아보세요.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map(service => (
             <ServiceCard 
               key={service.id}

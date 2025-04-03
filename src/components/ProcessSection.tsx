@@ -4,12 +4,12 @@ const ProcessStep = ({ number, title, description }: {
   description: string 
 }) => {
   return (
-    <div className="flex flex-col items-center text-center">
-      <div className="w-16 h-16 rounded-full bg-[#ff5a5a] text-white flex items-center justify-center text-2xl font-bold mb-4">
+    <div className="relative flex flex-col items-center text-center">
+      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[var(--primary)] to-[var(--primary-light)] text-white flex items-center justify-center text-3xl font-bold mb-6 shadow-lg z-10">
         {number}
       </div>
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <h3 className="font-playfair text-xl font-bold mb-4 text-[var(--text-dark)]">{title}</h3>
+      <p className="text-[var(--text-medium)]">{description}</p>
     </div>
   );
 };
@@ -39,29 +39,35 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section id="process" className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">이용 프로세스</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+    <section id="process" className="section bg-[var(--gray-100)] relative overflow-hidden">
+      {/* 장식용 요소 */}
+      <div className="absolute top-1/4 left-0 w-32 h-32 bg-[var(--primary)] rounded-full filter blur-[100px] opacity-10"></div>
+      <div className="absolute bottom-1/4 right-0 w-32 h-32 bg-[var(--secondary)] rounded-full filter blur-[100px] opacity-10"></div>
+      
+      <div className="container relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="font-playfair text-gradient mb-6">이용 프로세스</h2>
+          <p className="text-[var(--text-medium)] text-lg max-w-3xl mx-auto">
             스폰서링크는 간단한 4단계로 이벤트 주최자와 스폰서를 연결합니다.
             누구나 쉽게 이용할 수 있는 프로세스를 제공합니다.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map(step => (
-            <div key={step.id} className="relative">
-              <ProcessStep 
-                number={step.id}
-                title={step.title}
-                description={step.description}
-              />
-              {step.id < steps.length && (
-                <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gray-200 -z-10 transform -translate-x-8"></div>
-              )}
-            </div>
-          ))}
+        <div className="relative">
+          {/* 연결선 */}
+          <div className="absolute top-10 left-0 w-full h-0.5 bg-[var(--gray-300)] hidden lg:block"></div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {steps.map(step => (
+              <div key={step.id} className="relative">
+                <ProcessStep 
+                  number={step.id}
+                  title={step.title}
+                  description={step.description}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
