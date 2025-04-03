@@ -29,7 +29,7 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link href="/" className="font-playfair text-xl md:text-2xl font-bold text-[var(--primary)]">
+        <Link href="/" className="font-playfair text-xl md:text-2xl font-semibold text-[var(--primary)]">
           SPONSOR<span className="text-[var(--secondary)]">LINK</span>
         </Link>
         

@@ -30,7 +30,7 @@
   
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-playfair), ui-serif, Georgia, Cambria, serif;
-    @apply font-bold tracking-tight leading-tight;
+    @apply font-semibold tracking-tight leading-tight;
   }
   
   h1 {

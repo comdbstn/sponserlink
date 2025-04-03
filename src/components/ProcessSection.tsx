@@ -5,10 +5,10 @@ const ProcessStep = ({ number, title, description }: {
 }) => {
   return (
     <div className="relative flex flex-col items-center text-center">
-      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[var(--primary)] to-[var(--primary-light)] text-white flex items-center justify-center text-3xl font-bold mb-6 shadow-lg z-10">
+      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[var(--primary)] to-[var(--primary-light)] text-white flex items-center justify-center text-3xl font-semibold mb-6 shadow-lg z-10">
         {number}
       </div>
-      <h3 className="font-playfair text-xl font-bold mb-4 text-[var(--text-dark)]">{title}</h3>
+      <h3 className="font-playfair text-xl font-semibold mb-4 text-[var(--text-dark)]">{title}</h3>
       <p className="text-[var(--text-medium)]">{description}</p>
     </div>
   );

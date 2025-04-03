@@ -11,6 +11,12 @@ module.exports = {
         'sans': ['var(--font-montserrat)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         'playfair': ['var(--font-playfair)', 'ui-serif', 'Georgia', 'Cambria', 'serif'],
       },
+      fontWeight: {
+        light: '300',
+        normal: '400',
+        medium: '500',
+        bold: '700',
+      },
       colors: {
         'primary': 'var(--primary)',
         'primary-light': 'var(--primary-light)',

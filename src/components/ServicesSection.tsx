@@ -14,7 +14,7 @@ const ServiceCard = ({ title, description, icon, link }: {
           <div className="w-20 h-20 mb-6 relative flex items-center justify-center bg-[var(--gray-100)] group-hover:bg-white rounded-2xl shadow-md transition-colors duration-500">
             <span className="text-4xl">{icon}</span>
           </div>
-          <h3 className="font-playfair text-xl font-bold mb-4 text-[var(--primary)] group-hover:text-white transition-colors duration-500">{title}</h3>
+          <h3 className="font-playfair text-xl font-semibold mb-4 text-[var(--primary)] group-hover:text-white transition-colors duration-500">{title}</h3>
           <p className="text-[var(--text-medium)] mb-6 group-hover:text-white/90 transition-colors duration-500">{description}</p>
           <Link 
             href={link} 
