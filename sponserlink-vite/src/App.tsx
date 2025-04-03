@@ -1,4 +1,3 @@
-import { BrowserRouter as Router } from 'react-router-dom'
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import ServicesSection from './components/ServicesSection'
@@ -7,16 +6,14 @@ import './index.css'
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-background">
-        <Header />
-        <main>
-          <HeroSection />
-          <ServicesSection />
-          <ProcessSection />
-        </main>
-      </div>
-    </Router>
+    <div className="app">
+      <Header />
+      <main>
+        <HeroSection />
+        <ServicesSection />
+        <ProcessSection />
+      </main>
+    </div>
   )
 }
 
