@@ -44,9 +44,11 @@ const HeroSection = () => {
           <div className="relative">
             <div className="animate-float">
               <img 
-                src={smilePhoneImage} 
+                src="/images/smile-phone.png"
                 alt="스마일링 폰" 
                 className="max-w-md mx-auto"
+                width={400}
+                height={400}
               />
             </div>
           </div>
