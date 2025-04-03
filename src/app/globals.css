@@ -22,75 +22,154 @@
   --gray-300: #D6DBDF;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
+  --letter-spacing-tight: -0.025em;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-24: 6rem;
+  --border-radius-md: 0.375rem;
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 @layer base {
   body {
-    @apply text-[var(--text-dark)];
+    color: var(--text-dark);
     font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-playfair), ui-serif, Georgia, Cambria, serif;
-    @apply tracking-tight leading-tight;
+    line-height: 1.25;
     font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-tight);
   }
   
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
+    font-size: 2.25rem;
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
+    @media (min-width: 1024px) {
+      font-size: 3.75rem;
+    }
   }
   
   h2 {
-    @apply text-3xl md:text-4xl;
+    font-size: 1.875rem;
+    @media (min-width: 768px) {
+      font-size: 2.25rem;
+    }
   }
   
   h3 {
-    @apply text-2xl md:text-3xl;
+    font-size: 1.5rem;
+    @media (min-width: 768px) {
+      font-size: 1.875rem;
+    }
   }
   
   a {
-    @apply transition-colors duration-300;
+    transition: color 0.3s ease;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-[var(--primary)] text-white px-6 py-3 rounded-md hover:bg-[var(--primary-dark)] transition-all duration-300 shadow-md hover:shadow-lg;
+    background-color: var(--primary);
+    padding: var(--spacing-6) var(--spacing-6);
+    border-radius: var(--border-radius-md);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
     font-weight: var(--font-weight-medium);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary-dark);
+    box-shadow: var(--shadow-lg);
   }
   
   .btn-secondary {
-    @apply bg-[var(--secondary)] text-white px-6 py-3 rounded-md hover:bg-[var(--secondary-dark)] transition-all duration-300 shadow-md hover:shadow-lg;
+    background-color: var(--secondary);
+    padding: var(--spacing-6) var(--spacing-6);
+    border-radius: var(--border-radius-md);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
     font-weight: var(--font-weight-medium);
+    color: white;
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--secondary-dark);
+    box-shadow: var(--shadow-lg);
   }
   
   .btn-accent {
-    @apply bg-[var(--accent)] text-white px-6 py-3 rounded-md hover:bg-[var(--accent-dark)] transition-all duration-300 shadow-md hover:shadow-lg;
+    background-color: var(--accent);
+    padding: var(--spacing-6) var(--spacing-6);
+    border-radius: var(--border-radius-md);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
     font-weight: var(--font-weight-medium);
+    color: white;
+  }
+  
+  .btn-accent:hover {
+    background-color: var(--accent-dark);
+    box-shadow: var(--shadow-lg);
   }
   
   .btn-outline {
-    @apply border-2 border-[var(--primary)] text-[var(--primary)] px-6 py-3 rounded-md hover:bg-[var(--primary)] hover:text-white transition-all duration-300;
+    border: 2px solid var(--primary);
+    padding: var(--spacing-6) var(--spacing-6);
+    border-radius: var(--border-radius-md);
+    transition: all 0.3s ease;
     font-weight: var(--font-weight-medium);
+    color: var(--primary);
+  }
+  
+  .btn-outline:hover {
+    background-color: var(--primary);
+    color: white;
   }
   
   .section {
-    @apply py-16 md:py-24;
+    padding: var(--spacing-16) 0;
+    @media (min-width: 768px) {
+      padding: var(--spacing-24) 0;
+    }
   }
   
   .container {
-    @apply px-4 mx-auto max-w-7xl;
+    padding: 0 var(--spacing-4);
+    margin: 0 auto;
+    max-width: 80rem;
   }
   
   .card {
-    @apply bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden;
+    background-color: white;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    transition: box-shadow 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    box-shadow: var(--shadow-xl);
   }
   
   .gradient-bg {
-    @apply bg-gradient-to-r from-[var(--primary)] to-[var(--primary-light)];
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-[var(--primary)] to-[var(--primary-light)] bg-clip-text text-transparent;
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 }
